@@ -1,27 +1,26 @@
-import { Entity, Column, PrimaryGeneratedColumn } from 'typeorm';
-
+import { Entity, PrimaryGeneratedColumn, Column } from 'typeorm';
 @Entity()
 export class Person {
   @PrimaryGeneratedColumn()
   id: number;
-  @Column({ length: 30 })
+  @Column()
   firstname: string;
-  @Column({ length: 30 })
+  @Column()
   lastname: string;
-  @Column({ length: 255 })
+  @Column()
   email: string;
-  @Column({ length: 255 })
+  @Column()
   phone: string;
-  @Column({ length: 255 })
+  @Column()
   address: string;
-  @Column({ length: 4 })
-  status: number;
+  @Column()
+  estatus: number;
   @Column()
   viewed: boolean;
-  @Column({ length: 255 })
+  @Column()
   last_address_seen: string;
-  @Column({ type: 'timestamptz', default: () => 'CURRENT_TIMESTAMP' })
+  @Column({ type: 'timestamp', default: () => 'CURRENT_TIMESTAMP' })
   date_creted: Date;
-  @Column({ type: 'timestamptz', default: () => 'CURRENT_TIMESTAMP' })
+  @Column({ type: 'timestamp', default: () => 'CURRENT_TIMESTAMP' })
   date_updated: Date;
 }

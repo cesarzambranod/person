@@ -5,7 +5,7 @@ export class CreatePersonDto {
   email: string;
   phone: string;
   address: string;
-  status?: number;
+  estatus?: number;
   viewed: boolean;
   last_address_seen: string;
   date_created: number;

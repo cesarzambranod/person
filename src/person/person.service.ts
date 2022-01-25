@@ -11,8 +11,8 @@ export class PersonService {
     @InjectRepository(Person)
     private usersRepository: Repository<Person>,
   ) {}
-  create(data: CreatePersonDto) {
-    const person = this.usersRepository.create(data);
+  create(CreatePersonDto: CreatePersonDto) {
+    const person = this.usersRepository.save(CreatePersonDto);
     return person;
   }
   async update(id: number, data: Partial<UpdatePersonDto>) {
