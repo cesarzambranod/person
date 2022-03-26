@@ -1,4 +1,4 @@
-export class CreatePersonDto {
+export class CreateUserDto {
   id?: number;
   firstname: string;
   lastname: string;
@@ -8,6 +8,7 @@ export class CreatePersonDto {
   phone: string;
   address: string;
   estatus?: number;
+  avatar: string;
   date_created: number;
   date_updated: number;
 }

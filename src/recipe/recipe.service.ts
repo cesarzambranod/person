@@ -9,26 +9,26 @@ import { UpdateRecipeDto } from './dto/update-recipe.dto';
 export class RecipeService {
   constructor(
     @InjectRepository(Recipe)
-    private usersRepository: Repository<Recipe>,
+    private recipeRepository: Repository<Recipe>,
   ) {}
   create(createRecipeDto: CreateRecipeDto) {
-    return this.usersRepository.save(createRecipeDto);
+    return this.recipeRepository.save(createRecipeDto);
   }
 
   findAll(): Promise<Recipe[]> {
-    return this.usersRepository.find();
+    return this.recipeRepository.find();
   }
 
   findOne(id: number): Promise<Recipe> {
-    return this.usersRepository.findOne(id);
+    return this.recipeRepository.findOne(id);
   }
 
   async update(id: number, updateRecipeDto: Partial<UpdateRecipeDto>) {
-    await this.usersRepository.update({ id }, updateRecipeDto);
-    return await this.usersRepository.findOne({ id });
+    await this.recipeRepository.update({ id }, updateRecipeDto);
+    return await this.recipeRepository.findOne({ id });
   }
 
   async remove(id: number) {
-    return await this.usersRepository.delete(id);
+    return await this.recipeRepository.delete(id);
   }
 }

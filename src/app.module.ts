@@ -1,10 +1,12 @@
 import { Module } from '@nestjs/common';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
-import { PersonModule } from './person/person.module';
+import { UserModule } from './user/user.module';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { ConfigModule } from '@nestjs/config';
 import { RecipeModule } from './recipe/recipe.module';
+import { IngredientModule } from './ingredient/ingredient.module';
+import { UnitModule } from './unit/unit.module';
 @Module({
   imports: [
     ConfigModule.forRoot({
@@ -20,8 +22,10 @@ import { RecipeModule } from './recipe/recipe.module';
       entities: [__dirname + '/**/*.entity{.ts,.js}'],
       synchronize: true,
     }),
-    PersonModule,
+    UserModule,
     RecipeModule,
+    IngredientModule,
+    UnitModule,
   ],
   controllers: [AppController],
   providers: [AppService],
