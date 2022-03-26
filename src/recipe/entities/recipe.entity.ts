@@ -1,24 +1,16 @@
 import { Entity, PrimaryGeneratedColumn, Column } from 'typeorm';
 @Entity()
-export class Person {
+export class Recipe {
   @PrimaryGeneratedColumn()
   id: number;
   @Column()
-  firstname: string;
+  name: string;
   @Column()
-  lastname: string;
+  img: string;
   @Column()
-  email: string;
+  ingredients: string;
   @Column()
-  username: string;
-  @Column()
-  password: string;
-  @Column()
-  phone: string;
-  @Column()
-  address: string;
-  @Column()
-  estatus: number;
+  preparation: string;
   @Column({ type: 'timestamp', default: () => 'CURRENT_TIMESTAMP' })
   date_creted: Date;
   @Column({ type: 'timestamp', default: () => 'CURRENT_TIMESTAMP' })

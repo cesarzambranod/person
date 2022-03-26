@@ -27,7 +27,7 @@ export class PersonService {
     return this.usersRepository.findOne(id);
   }
 
-  async remove(id: number): Promise<void> {
-    await this.usersRepository.delete(id);
+  remove(id: number) {
+    return this.usersRepository.delete(id);
   }
 }
