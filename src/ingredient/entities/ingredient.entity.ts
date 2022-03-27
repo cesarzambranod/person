@@ -6,7 +6,7 @@ export class Ingredient {
   @Column()
   name: string;
   @Column()
-  calories: number;
+  calories_for_gr: number;
   @Column({ type: 'timestamp', default: () => 'CURRENT_TIMESTAMP' })
   date_creted: Date;
   @Column({ type: 'timestamp', default: () => 'CURRENT_TIMESTAMP' })
