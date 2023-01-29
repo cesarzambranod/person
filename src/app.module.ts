@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 import { Module } from '@nestjs/common';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
@@ -7,6 +8,8 @@ import { ConfigModule } from '@nestjs/config';
 import { RecipeModule } from './recipe/recipe.module';
 import { IngredientModule } from './ingredient/ingredient.module';
 import { UnitModule } from './unit/unit.module';
+import * as dotenv from 'dotenv';
+dotenv.config()
 @Module({
   imports: [
     ConfigModule.forRoot({
